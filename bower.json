@@ -1,0 +1,30 @@
+{
+  "name": "postscribe",
+  "main": "dist/postscribe.js",
+  "version": "1.1.3",
+  "homepage": "https://github.com/niksy/postscribe",
+  "description": "Asynchronously write javascript, even with document.write.",
+  "keywords": [
+    "document.write",
+    "tag",
+    "writer",
+    "asynchronous",
+    "javascript",
+    "after",
+    "load"
+  ],
+  "authors": [
+    "Derek Brans <dbrans@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "doc",
+    "htmlParser"
+  ]
+}

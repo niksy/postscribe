@@ -1,4 +1,4 @@
-/* Asynchronously write javascript, even with document.write., v1.1.2 https://github.com/krux/postscribe
+/* Asynchronously write javascript, even with document.write., v1.1.3 https://github.com/krux/postscribe
 Copyright (c) 2013 Derek Brans, MIT license https://github.com/krux/postscribe/blob/master/LICENSE */
 
 // An html parser written in JavaScript
@@ -859,7 +859,14 @@ Copyright (c) 2013 Derek Brans, MIT license https://github.com/krux/postscribe/b
         options.afterWrite(str);
       }
 
-      set(doc, { write: write, writeln: function(str) { write(str + '\n'); } });
+      set(doc, {
+        write: function(){
+          return write(toArray(arguments).join(''));
+        },
+        writeln: function(str) {
+          return write(toArray(arguments).join('') + '\n');
+        }
+      });
 
       // Override window.onerror
       var oldOnError = active.win.onerror || doNothing;
